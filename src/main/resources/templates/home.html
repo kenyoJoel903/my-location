@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Home</title>
+
+<link rel="stylesheet"	th:href="@{/librerias/bootstrap-4.5.2-dist/css/bootstrap.css}"	href="static/librerias/bootstrap-4.5.2-dist/css/bootstrap.css" />
+<link rel="stylesheet" th:href="@{/librerias/leaflet/leaflet.css}"	href="static/librerias/leaflet/leaflet.css" />
+<link rel="stylesheet" th:href="@{/css/app.css}"	href="static/css/app.css" />
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<form class="form-inline">
+					<div class="form-group mb-2">
+						<label for="txtNombre" class="sr-only">Nombre</label>
+						<input type="text" placeholder="nombre" id="txtNombre" class="form-control"/>
+					</div>
+					<button id="btnConectar" type="button" onclick="conectar()" class="btn btn-primary mb-2">Ubicar</button>
+					<button  id="btnDesconectar" type="button" onclick="desconectar()" class="btn btn-danger mb-2" disabled="disabled">Desconectar</button>	
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+				<div id="mapa"></div>
+			</div>
+		</div>
+	</div>
+	<!-- script type="text/javascript" th:src="@{/librerias/bootstrap-4.5.2-dist/js/bootstrap.js}" src="static/librerias/bootstrap-4.5.2-dist/js/bootstrap.js"></script-->
+	<script type="text/javascript" th:src="@{/librerias/leaflet/leaflet-src.js}" src="static/librerias/leaflet/leaflet-src.js"></script>
+	<script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/app.js}" src="static/js/app.js"></script>
+</body>
+</html>
