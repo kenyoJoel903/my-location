@@ -99,7 +99,7 @@ App.prototype.dibujarUbicacion = function(data) {
 
 App.prototype.geoLocalizar = function () {
 	this.nombreUsuario = document.getElementById("txtNombre").value;
-		
+	this._mapa.locate({setView: true, maxZoom: 16});
 }
 
 App.prototype.getMapa = function() {
@@ -109,7 +109,7 @@ App.prototype.getMapa = function() {
 App.prototype.setConnect = function(conectado) {
 	document.getElementById("btnConectar").disabled = conectado; 
 	document.getElementById("btnDesconectar").disabled = !conectado; 
-	this._mapa.locate({setView: true, maxZoom: 16});
+	
 }
 
 App.prototype.conectar = function () {
